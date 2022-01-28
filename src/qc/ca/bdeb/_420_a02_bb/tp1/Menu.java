@@ -57,9 +57,6 @@ public class Menu {
     public void genMenu() {
         String line = "";
         int lengthMenu = 6 + optionsM.length + 1;
-        int[] fillText = new int[widthM];
-        int textLoc;
-        int textLoc2;
         menuM = new String[lengthMenu];
         String[] header = genHeader();
         System.arraycopy(header, 0, menuM, 0, header.length);
@@ -70,9 +67,9 @@ public class Menu {
         for (int i = 0; i < headLength; i++) {
             if (i == 0 || i == headLength - 1) {
                 headBody[i] = borderLine;
-            } else if (locHeadBlock.get(i).equals("Title")) {
+            } else if (locHeadBlock.get(i) != null && locHeadBlock.get(i).equals("Title")) {
                 headBody[i] = genTextLine(titleM);
-            } else if (locHeadBlock.get(i).equals("Description")) {
+            } else if (locHeadBlock.get(i) != null && locHeadBlock.get(i).equals("Description")) {
                 headBody[i] = genTextLine(descM);
             } else {
                 headBody[i] = skipLine;
@@ -101,6 +98,7 @@ public class Menu {
                 stringTitle += " ";
             }
         }
-        return stringTitle + "\n";
+        stringTitle += "\n";
+        return stringTitle;
     }
 }
