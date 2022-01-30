@@ -10,8 +10,7 @@ public class Main {
                 "1 - Option test 1",
                 "2 - Option test 2",
                 "3 - Option test 3",
-                "4 - Option test 4",
-                "5 - Option test 5"
+                "4 - Option test 4"
         };
 	    Menu m = new Menu(name, title, desc, opt);
         m.genMenu();
