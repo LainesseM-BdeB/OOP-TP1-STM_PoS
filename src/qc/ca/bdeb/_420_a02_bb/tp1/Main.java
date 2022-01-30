@@ -11,8 +11,7 @@ public class Main {
                 "2 - Option test 2",
                 "3 - Option test 3",
                 "4 - Option test 4",
-                "5 - Option test 5",
-                "6 - Option test 6"
+                "5 - Option test 5"
         };
 	    Menu m = new Menu(name, title, desc, opt);
         m.genMenu();
