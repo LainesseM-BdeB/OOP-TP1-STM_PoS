@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         String name = "Test Name";
-        String title = "Test Title";
-        String desc = "Please choose a test.";
+        String title = "Option selector 2000";
+        String desc = "Choose an option from the list below:";
         String[] opt = {
                 "1 - Option test 1",
                 "2 - Option test 2",
@@ -14,8 +14,6 @@ public class Main {
         };
 	    Menu m = new Menu(name, title, desc, opt);
         m.genMenu();
-        for (String ln : m.menuM) {
-            System.out.print(ln);
-        }
+        m.printMenu();
     }
 }
