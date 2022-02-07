@@ -4,7 +4,7 @@ public class Order {
     String title;
     int titleQty;
     String rebateName;
-    float price;
+    double price;
     public Order() {
 
     }

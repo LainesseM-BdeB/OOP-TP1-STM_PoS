@@ -6,17 +6,19 @@ public class Title {
     String name;
     HashMap<String, Double> pricing = new HashMap<String, Double>();
 
-    public Title(String name, String pricing) {
-        this.name = name;
-
+    public Title(String pricing) {
+        String[] splitPricing = pricing.split("=");
+        this.name = splitPricing[0];
+        this.pricing = splitPricingString(splitPricing[1]);
     }
 
     private HashMap<String, Double> splitPricingString(String pricing) {
         String[] pricingSplit;
         HashMap<String, Double> pricingMap = new HashMap<String, Double>();
-        pricingSplit = pricing.split(",");
+        pricingSplit = pricing.split("[,\\s]+");
         for (String item : pricingSplit) {
-            System.out.println(item);
+            String[] splitItem = item.split("-");
+            pricingMap.put(splitItem[0], Double.valueOf(splitItem[1]));
         }
         return pricingMap;
     }
