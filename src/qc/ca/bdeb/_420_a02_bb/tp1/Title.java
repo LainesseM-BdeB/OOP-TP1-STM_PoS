@@ -15,7 +15,7 @@ public class Title {
     private HashMap<String, Double> splitPricingString(String pricing) {
         String[] pricingSplit;
         HashMap<String, Double> pricingMap = new HashMap<String, Double>();
-        pricingSplit = pricing.split("[,\\s]+");
+        pricingSplit = pricing.split(",\s+|,");
         for (String item : pricingSplit) {
             String[] splitItem = item.split("-");
             pricingMap.put(splitItem[0], Double.valueOf(splitItem[1]));

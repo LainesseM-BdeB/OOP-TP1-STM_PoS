@@ -19,10 +19,15 @@ public class Main {
         m.printMenu();
 // TESTING FEATURES
         String[] pricingSplit;
-        String pricing = "1 passage=regular-10.00, student-8.00, senior-5.00";
+        String pricing = "1 Passage=Régulier-3.50, 6 à 17 ans-2.50, 65 ans et +-1.00";
+        String pricing2 = "2 Passage=Régulier-6.50, 6 à 17 ans-4.25, 65 ans et +-2.00";
         Title testTitle = new Title(pricing);
-        System.out.println(testTitle.name);
-        for (String test : testTitle.pricing.keySet()) {
-            System.out.println(test + " - " + testTitle.pricing.get(test));        }
+        Title testTitle2 = new Title(pricing2);
+        TitlesGroup testGroup = new TitlesGroup("Test");
+        testGroup.printTitles();
+        testGroup.addTitle(testTitle);
+        testGroup.printTitles();
+        testGroup.addTitle(testTitle2);
+        testGroup.printTitles();
     }
 }
