@@ -1,0 +1,22 @@
+1- Passages Uniques
+1- 1 Passage=Régulier-3.50, 6 à 17 ans-2.50, 65 ans et +-1.00
+2- 2 Passage=Régulier-6.50, 6 à 17 ans-4.25, 65 ans et +-2.00
+3- 10 Passage=Régulier-30.00, 6 à 17 ans-19.00, 65 ans et +-9.00
+
+2- Soirées, Jours et Weekends
+1- Soirées illimitée (18h à 5h)=Régulier-5.75
+2- 1 Jour (24h)=Régulier-10.00
+3- Weekend illimité (Ven. 16h à Lun. 5h)=Régulier-14.50
+4- 3 Jours=Régulier-20.50
+
+3- Abonnements
+1- Hebdo (Lun. à Dim.)=Régulier-28.00, 6 à 17 ans-16.75, 65 ans et +-8.50
+2- Mensuel (1er à la fin du mois)=Régulier-90.50, 6 à 17 ans-54.00, Étudiants 18 and et +-54.00, 65 ans et +-27.00
+3- 4 Mois (Consécutifs)=6 à 17 ans-212.00, Étudiants 18 ans et +-212.00, 65 ans et +-106.00
+
+4- Groupe
+1- 1 Adulte + 10 Enfants de 6 à 13 ans=6 à 17 ans-19.00
+
+5- Autre
+1- YUL Aéroport (747)=Régulier-10.00
+2- Passage 747 Ouest=Régulier-10.00

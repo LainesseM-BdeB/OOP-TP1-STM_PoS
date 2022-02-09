@@ -1,7 +1,9 @@
 package qc.ca.bdeb._420_a02_bb.tp1;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class TitlesGroup {
     String name;
