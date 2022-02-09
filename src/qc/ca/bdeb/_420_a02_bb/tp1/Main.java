@@ -11,8 +11,8 @@ public class Main {
         HashMap<String, TitlesGroup> groups = readTitlesFile();
         List<String> main = makeList(new ArrayList<>(groups.keySet()));
         Menu mainM = new Menu("Main Menu",
-                "Welcome to the STM",
-                "Where you purchase your transport titles",
+                "Bienvenue à la STM",
+                "Procurez-vous vos titres!",
                 main);
         mainM.genMenu();
         Scanner uInput = new Scanner(System.in);
@@ -22,19 +22,19 @@ public class Main {
             System.out.println("Quel catégorie de titre voulez vous achetez?");
             uIn = uInput.nextLine().toLowerCase().strip();
             if (uIn.equals("q")) {
-                System.out.println("Goodbye!");
+                System.out.println("Au revoir!");
                 break;
             } else {
                 String menuName = mainM.optionsM.get(Integer.parseInt(uIn) - 1);
                 Title[] selectedCat = groups.get(menuName).titles;
                 List<String> opt = makeList(selectedCat);
-                Menu secMenu = new Menu(menuName, menuName, "Choose the options you need?", opt);
+                Menu secMenu = new Menu(menuName, menuName.substring(3), "Voici les titres disponibles", opt);
                 secMenu.genMenu();
                 secMenu.printMenu();
                 System.out.println("Quel titre voulez vous achetez?");
                 uIn = uInput.nextLine().toLowerCase().strip();
                 if (uIn.equals("q")) {
-                    System.out.println("Goodbye!");
+                    System.out.println("Au revoir!");
                     break;
                 } else {
                     Title selectedTitle = selectedCat[Integer.parseInt(uIn) - 1];
@@ -50,10 +50,11 @@ public class Main {
                         priceList.add(priceLine.toString());
                     }
                     opt = makeList(priceList);
-                    Menu confMenu = new Menu(menuName, menuName, "Here are the available prices?", opt);
+                    menuName = selectedTitle.name;
+                    Menu confMenu = new Menu(menuName, menuName.substring(3), "Voici les tarifs disponibles", opt);
                     confMenu.genMenu();
                     confMenu.printMenu();
-                    System.out.println("Quelle tarification voulez-vous?");
+                    System.out.println("Quelle tarifications voulez-vous?");
                     uIn = uInput.nextLine().toLowerCase().strip();
                     if (uIn.equals("q")) {
                         System.out.println("Goodbye!");
@@ -90,6 +91,7 @@ public class Main {
                                     order.calcChange(toReturn);
                                     System.out.println("Voici votre change!");
                                     order.printChange();
+                                    Thread.sleep(2000);
                                     System.out.println("Merci pour votre achat!\nVoici votre reçu.");
                                     order.printReceipt();
                                     break;
