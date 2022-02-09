@@ -1,13 +1,14 @@
 package qc.ca.bdeb._420_a02_bb.tp1;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Menu {
     String nameM;
     String titleM;
     String descM;
-    String[] optionsM;
+    List<String> optionsM;
     String[] menuM;
     String borderM = "#"; //Character to use for the menu border
     String borderLine = "";
@@ -19,7 +20,7 @@ public class Menu {
     int headLength = 7; //Length of the menu's header
     int optionsLength;
 
-    public Menu(String name, String title, String desc, String[] options) throws Exception {
+    public Menu(String name, String title, String desc, List<String> options) throws Exception {
         nameM = name;
         //Checks for any text value that exceeds the maximum width allowed for the menu and returns an error if
         //the text is longer.
@@ -48,6 +49,7 @@ public class Menu {
             }
         }
         optionsM = options;
+        optionsM.add("Q- Quitter");
         //Creates the skip line and border line used in the menu creation
         for (int i = 0; i < widthM; i++) {
             if (i >= 1 && i < widthM - 1) {
@@ -59,7 +61,7 @@ public class Menu {
         }
         skipLine += "\n";
         borderLine += "\n";
-        optionsLength = optionsM.length;
+        optionsLength = optionsM.size();
         //Initialise the locHeadBlock map that is used to place the title and description at the correct location
         //Not totally necessary but might come in handy if the ui is updated
         locHeadBlock.put(2, "Title");
@@ -69,7 +71,7 @@ public class Menu {
     //Method to generate a menu
     public void genMenu() {
         String line = "";
-        int lengthMenu = 6 + (optionsM.length * 2) + 4;
+        int lengthMenu = 6 + (optionsM.size() * 2) + 4;
         menuM = new String[lengthMenu];
         String[] header = genHeader();
         System.arraycopy(header, 0, menuM, 0, header.length);
