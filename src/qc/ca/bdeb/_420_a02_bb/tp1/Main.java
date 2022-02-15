@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+import static java.lang.Math.round;
+
 public class Main {
     public static void main(String[] args) throws Exception {
         HashMap<String, TitlesGroup> groups = readTitlesFile();
@@ -87,7 +89,7 @@ public class Main {
                                     order.printReceipt();
                                     break;
                                 } else {
-                                    double toReturn = amount - order.price;
+                                    double toReturn = (double) round((amount - order.price) * 100) / 100;
                                     order.calcChange(toReturn);
                                     System.out.println("Voici votre change!");
                                     order.printChange();
@@ -103,8 +105,22 @@ public class Main {
             }
         } while (true);
 // TESTING FEATURES
+        Title test = new Title("");
     }
 
+    /**
+     * Method that will read the titles.txt file that contains all the info on each group of titles.<br>
+     * It has a group title followed by lines containing individual titles and their pricing info.<br>
+     * <br>
+     * It returns a HashMap of all the groups and titles.<br>
+     * Note: The titles.txt must follow this format:<br>
+     * 1- groupName<br>
+     * 1- titleName=pricing1-10.00, pricing2-8.00<br>
+     * 2- titleName=pricing1-15.00, pricing2-10.00<br>
+     * 2- groupName<br>
+     * 1- titleName=princing1-12.00<br>
+     * etc..
+     */
     public static HashMap<String, TitlesGroup> readTitlesFile() throws IOException {
         HashMap<String, TitlesGroup> groups = new LinkedHashMap<>();
         ArrayList<Title> tempGroupTitles = new ArrayList<>();
@@ -131,10 +147,16 @@ public class Main {
         return groups;
     }
 
+    /**
+     * Method that makes a copy of an ArrayList as a List
+     */
     public static List<String> makeList(ArrayList<String> arr) {
         return new ArrayList<>(arr);
     }
 
+    /**
+     * Method that makes a copy of an Array as a List
+     */
     public static List<String> makeList(Title[] arr) {
         List<String> list = new ArrayList<>();
         for (Title item : arr) {
