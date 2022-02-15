@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"qc.ca.bdeb._420_a02_bb.tp1","l":"Main"},{"p":"qc.ca.bdeb._420_a02_bb.tp1","l":"Menu"},{"p":"qc.ca.bdeb._420_a02_bb.tp1","l":"Order"},{"p":"qc.ca.bdeb._420_a02_bb.tp1","l":"Title"},{"p":"qc.ca.bdeb._420_a02_bb.tp1","l":"TitlesGroup"}];updateSearchResults();
