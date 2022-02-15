@@ -9,10 +9,18 @@ public class TitlesGroup {
     String name;
     Title[] titles;
 
+    /**
+     * Object that takes the name of a Category of Titles.<br>
+     * It can then be filled with the method addTitle.
+     */
     public TitlesGroup(String name) {
         this.name = name;
     }
 
+    /**
+     * Method that adds a Title to the group.<br>
+     * If the group was empty, it generates the new array.
+     */
     public void addTitle(Title title) {
         if (this.titles == null) {
             this.titles = new Title[]{title};
@@ -24,6 +32,10 @@ public class TitlesGroup {
         }
     }
 
+    /**
+     * Method that prints the content of the TitlesGroup.<br>
+     * Used only for testing purposes.
+     */
     public void printTitles() {
         if (this.titles == null) {
             System.out.println("There are no titles in this group.");

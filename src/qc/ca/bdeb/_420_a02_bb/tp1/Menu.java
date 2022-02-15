@@ -20,6 +20,11 @@ public class Menu {
     int headLength = 7; //Length of the menu's header
     int optionsLength;
 
+    /**
+     * Menu is an object that contains all the relevant info that makes up a graphical menu.<br>
+     * It will validate the length of the text to display so that it isn't longer than the width limit.<br>
+     * It will then store those values if they are all valid.
+     */
     public Menu(String name, String title, String desc, List<String> options) throws Exception {
         nameM = name;
         //Checks for any text value that exceeds the maximum width allowed for the menu and returns an error if
@@ -68,7 +73,9 @@ public class Menu {
         locHeadBlock.put(4, "Description");
     }
 
-    //Method to generate a menu
+    /**
+     * Method that generates the menu as a header and a body
+     */
     public void genMenu() {
         String line = "";
         int lengthMenu = 6 + (optionsM.size() * 2) + 4;
@@ -79,7 +86,10 @@ public class Menu {
         System.arraycopy(options, 0, menuM, header.length, options.length);
     }
 
-    //Method to generate the header of the menu based on a specific design, might need to make it more dynamic
+    /**
+     * Method to generate the header of the menu based on a specific design<br>
+     * that is defined with this.headLength, this.widthM, this.widthMarginM and this.borderM.
+     */
     private String[] genHeader() {
         String[] headBody = new String[headLength];
         for (int i = 0; i < headLength; i++) {
@@ -96,7 +106,11 @@ public class Menu {
         return headBody;
     }
 
-    //Method to generate the options part of the menu. It will add a skip line between each option.
+    /**
+     * Method to generate the body of the menu based on a specific design<br>
+     * that is defined with this.widthM, this.widthMarginM and this.borderM.<br>
+     * It will also add a this.skipLine between each options.
+     */
     private String[] genOptions() {
         int optionBodyLength = optionsLength * 2 + 3;
         String[] optionsBody = new String[optionBodyLength];
@@ -118,8 +132,10 @@ public class Menu {
         return optionsBody;
     }
 
-    //Method to generate the lines in the menu that contains dynamic text.
-    //It also accepts a bool to center or left align the text.
+    /**
+     * Method to generate the lines in the menu that contains dynamic text.
+     * It also accepts a bool to center or left align the text.
+     */
     private String genTextLine(String textM, Boolean centered) {
         // Put a check for mid or left align
         int startText;
@@ -145,7 +161,9 @@ public class Menu {
         return finalText;
     }
 
-    //Method to print the menu
+    /**
+     * Method to print the menu line by line.
+     */
     public void printMenu() {
         for (String ln : menuM) {
             System.out.print(ln);
